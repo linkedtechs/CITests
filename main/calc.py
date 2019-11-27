@@ -9,3 +9,6 @@ class Calculator:
 
     def subtract(self, first_term, second_term):
         return first_term - second_term
+
+    def divide(self, first_term, second_term):
+        return first_term / second_term
