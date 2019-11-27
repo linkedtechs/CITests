@@ -8,4 +8,4 @@ install:
 # command to run tests
 script:
   - flake8 --exclude=venv* --statistics
-  - pytest ---cov-report html:test-artifacts/cov_html --cov-report xml:test-reports/cov.xml --cov=main/ tests/
+  - pytest --cov-report html:test-artifacts/cov_html --cov-report xml:test-reports/cov.xml --cov=main/ tests/
