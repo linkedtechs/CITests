@@ -18,5 +18,5 @@ blocks:
             - >-
               flake8 . --count --exit-zero --max-complexity=10
               --max-line-length=127 --statistics
-            - 'pytest  --cov-report html:cov_html --cov-report xml:cov.xml'
+            - 'pytest --cov --cov-report html:cov_html --cov-report xml:cov.xml'
             - artifact push job cov_html
