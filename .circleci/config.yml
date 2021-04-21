@@ -10,6 +10,8 @@ jobs:
     steps:
       # Step 1: obtain repo from GitHub
       - checkout
+      - run: sudo chown -R circleci:circleci /usr/local/bin
+      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
       - run: mkdir -p test-reports test-artifacts
       - run: which python
       # Step 2: create virtual env and install dependencies
