@@ -42,8 +42,8 @@ jobs:
             . venv/bin/activate
             flake8 --exclude=venv* --statistics
             echo $(circleci tests glob "tests/**/*.py")
-            circleci tests glob "tests/**/*.py" | circleci tests split
-            pytest -v --cov-report term-missing --cov-report html:test-artifacts/cov_html --cov-report xml:test-reports/cov.xml --cov=main/ tests/
+            circleci tests glob "tests/**/*.py" | circleci tests split > /tmp/tests-to-run
+            pytest -v --cov-report term-missing --cov-report html:test-artifacts/cov_html --cov-report xml:test-reports/cov.xml $(cat /tmp/tests-to-run)
       - store_test_results:
           path: test-reports/  
       - store_artifacts:
